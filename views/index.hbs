@@ -1,50 +1,66 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<div id="1" class="square-green"></div>
+<div class="mobil">
+  <div class="mobil-atas">
+    <img src="/images/car-left.png" class="mobil-1" id="m1">
+    <img src="/images/car-right.png" class="mobil-2" id="m2">
+  </div>
+  <div class="mobil-bawah">
+    <img src="/images/car-left.png" class="mobil-3" id="m3">
+    <img src="/images/car-right.png" class="mobil-4" id="m4">
+  </div>
+</div>
+
 <br>
-<div id="2" class="square-green"></div>
+<!-- <div id="2" class="square-green"></div>
 <br>
 <div id="3" class="square-green"></div>
 <br>
-<div id="4" class="square-green"></div>
-<style>
-.square-red {
-	width: 100px;
-	height: 100px;
-	background: red;
-}
-.square-green {
-	width: 100px;
-	height: 100px;
-	background: green;
-}
-</style>
+<div id="4" class="square-green"></div> -->
+
 <script src="/javascripts/please-wait.min.js"></script>
 <script type="text/javascript">
   window.loading_screen = window.pleaseWait({
-    logo: "images/pathgather.png",
-    backgroundColor: '#f46d3b',
-    loadingHtml: "<p class='loading-message'>LBE AJK</p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+    logo: "images/logo.png",
+    backgroundColor: '#0288D1',
+    loadingHtml: "<p class='loading-message'>LBE AJK </p><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
   });
 </script>
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
+  $('#m1').hide();
+  $('#m2').hide();
+  $('#m3').hide();
+  $('#m4').hide();
 
   var socket = io.connect();
-  socket.on('stop_loading', function (data){
+  socket.on('stop_loading', function (data)
+  {
   	window.loading_screen.finish();
   })
-  socket.on('update_parkiran', function (data) {
-    for (var i = 0; i < data.length; i++) {
-    	
-    	var kotak = document.getElementById(data[i].id);
-    	if(data[i].status==1){
-    		kotak.className= "square-red";
-    	}
-    	else {
-    		kotak.className= "square-green";
-    	}
-    };
+  socket.on('update_parkiran', function (data) 
+  {
+    if(data[0].status==1)
+    {
+      $('#m1').show();
+    }
+    else $('#m1').hide();
+    
+    if (data[1].status==1)
+    {
+      $('#m2').show();
+    }
+    else $('#m2').hide();
+    
+    if (data[2].status==1)
+    {
+      $('#m3').show();
+    }
+    else $('#m3').hide();
+    
+    if (data[3].status==1)
+    {
+      $('#m4').show();
+    }
+    else $('#m4').hide();
   });
 </script>

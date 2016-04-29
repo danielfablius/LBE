@@ -1,8 +1,71 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+body 
+{
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+    background-image: url("../images/parkir.jpg");
+}
 
-a {
-  color: #00B7FF; }
+a 
+{
+    color: #00B7FF; 
+}
 
 /*# sourceMappingURL=style.css.map */
+
+.square-red 
+{
+    width: 100px;
+	height: 100px;
+	background: red;
+}
+.square-green {
+	width: 100px;
+	height: 100px;
+	background: green;
+}
+
+.mobil
+{
+    width: 100%;
+    position: relative;
+}
+
+.mobil-atas
+{
+    height: 250px;
+    margin: 20px 50px 0 60px;
+}
+
+.mobil-bawah
+{
+    height: 250px;
+    margin: 20px 50px 0 60px;
+}
+
+.mobil-1
+{
+    left: 100px;
+    float: left;
+    transition: all .6s linear;
+}
+
+.mobil-2
+{
+    right: 100px;
+    float: right;
+    transition: all .6s linear;
+}
+
+.mobil-3
+{
+    left: 100px;
+    float: left;
+    transition: all .6s linear;
+}
+
+.mobil-4
+{
+    right: 100px;
+    float: right;
+    transition: all .6s linear;
+}
