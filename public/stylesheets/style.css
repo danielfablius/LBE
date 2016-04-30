@@ -1,8 +1,10 @@
 body 
 {
+    height: 100%;
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
     background-image: url("../images/parkir.jpg");
+    position: fixed;
 }
 
 a 
@@ -22,6 +24,13 @@ a
 	width: 100px;
 	height: 100px;
 	background: green;
+}
+
+.square-blue
+{
+    width: 500px;
+    height: 200px;
+    background-color: dodgerblue;
 }
 
 .mobil
